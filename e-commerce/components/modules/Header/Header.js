@@ -1,6 +1,5 @@
 "use client"
 import { CiUser, } from "react-icons/ci";
-import { AiOutlineShopping } from "react-icons/ai";
 import { IoIosMenu } from "react-icons/io";
 import { VscChevronDown, VscCommentDiscussion } from "react-icons/vsc";
 import { IoSunnyOutline, IoMoonOutline, IoSearchOutline, IoHomeOutline, IoPowerOutline, IoFolderOpenOutline } from "react-icons/io5";
@@ -10,13 +9,15 @@ import { SiAwssecretsmanager } from "react-icons/si";
 import { useTheme } from "next-themes";
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import Image from "next/image";
+import SideBar from "../SideBar/SideBar";
 
 export default memo(function Header() {
     const { theme, setTheme, resolvedTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
     const [isValue, setIsValue] = useState(false);
     const [openUserMenu, setOpenUserMenu] = useState(false);
-    const [, setIsSideBar] = useState(false);
+    const [isSideBar, setIsSideBar] = useState(false);
     const [searchValue, setSearchValue] = useState('');
     const [isLogin,] = useState(false);
     let router = useRouter()
@@ -25,9 +26,11 @@ export default memo(function Header() {
     let expandedSearchRef = useRef(null);
     let userMenu = useRef(null);
     let searchBarRef = useRef(null);
+
     useEffect(() => {
         setMounted(true)
     }, [])
+
     const toggleMenu = useCallback(() => {
         if (window.innerWidth <= 1280) {
             setIsValue((prev) => !prev);
@@ -192,8 +195,8 @@ export default memo(function Header() {
                         ) : (
                             <>
                                 <Link href={'/Login'} className="bg-brand text-white h-13 transition-colors hover:bg-hover rounded-xl px-4 lg:flex items-center justify-center gap-2 hidden w-42.5">
-                                    <CiUser className=" text-2xl" />
-                                    <span className="font-regular">
+                                    <CiUser className="text-2xl" />
+                                    <span>
                                         ورود | عضویت
                                     </span>
                                 </Link>
@@ -249,7 +252,7 @@ export default memo(function Header() {
                                         onChange={e => setSearchValue(e.target.value)}
                                         style={{ all: "unset" }}
                                         type="text"
-                                        className="mt-1 pointer-events-auto h-full inline-block text-sm cursor-default dana-medium dark:text-white text-gray-900 text-start"
+                                        className="mt-1 pointer-events-auto h-full inline-block text-sm cursor-default dark:text-white text-gray-900 text-start"
                                         placeholder="چیو میخوای یاد بگیری؟"
                                     />
                                 </div>
@@ -259,7 +262,7 @@ export default memo(function Header() {
                     </div>
                     <div className={`${isValue ? "flex h-13 items-center pointer-events-none" : "flex h-13 items-center gap-5"}`}>
                         <div className="lg:ml-8 h-full">
-                            <img className="h-12" src="/images/photo_2026-02-13_16-38-00.jpg" alt="logo" />
+                            <Image height={60} width={66} className="rounded" src="/images/photo_2026-02-14_01-04-33.jpg" alt="logo" />
                         </div>
                         <ul className="hidden lg:flex gap-6">
                             <li className="group relative">
@@ -289,12 +292,13 @@ export default memo(function Header() {
                         <button onClick={(e) => {
                             setIsSideBar(prev => !prev)
                             e.stopPropagation()
-                        }} className="bg-[#f3f4f6] dark:bg-[#2F3542] menu-button cursor-pointer h-13 rounded-full w-13 flex items-center justify-center">
-                            <IoIosMenu className="text-2xl text-gray-900 dark:text-white" />
+                        }} className="bg-background menu-button cursor-pointer h-13 rounded-full w-13 flex items-center justify-center">
+                            <IoIosMenu className="text-2xl text-color" />
                         </button>
                     </div>
                 </div>
             </div>
+            <SideBar isSideBar={isSideBar} setIsSideBar={setIsSideBar} searchValue={searchValue} setSearchValue={setSearchValue} />
             <div ref={bodyShadow}></div>
         </>
     )
