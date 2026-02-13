@@ -1,5 +1,5 @@
 import "./globals.css";
-import { ThemeProvider } from "@/components/ThemeProvider/themeProvider";
+import { ThemeProvider } from "@/components/modules/ThemeProvider/themeProvider";
 import localFont from "next/font/local";
 
 const thinText = localFont({
@@ -22,12 +22,17 @@ const fontDescription = localFont({
   display: "swap",
   variable: "--font-description",
 });
+const fontRegular = localFont({
+  src: "/fonts/regular.ttf",
+  display: "swap",
+  variable: "--font-regular",
+});
 
 export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl" suppressHydrationWarning>
       <body
-        className={`${thinText.variable} ${fontTitle.variable} ${sectionHeading.variable} ${fontDescription.variable}`}
+        className={`${thinText.variable} ${fontRegular.variable} ${fontTitle.variable} ${sectionHeading.variable} ${fontDescription.variable}`}
         cz-shortcut-listen="true"
       >
         <ThemeProvider>{children}</ThemeProvider>
