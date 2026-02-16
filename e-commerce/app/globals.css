@@ -33,6 +33,7 @@ body {
   --color-foreground: white;
   --color-text: #64748b;
   --color-menu: #101828 !important;
+  --color-theme: #000 !important;
   --color-primary: #0a97d4;
   --color-hover: #0a97d4b2;
   --color-border: #AEB877;
@@ -44,6 +45,7 @@ body {
   --color-foreground: #242A38;
   --color-text: #fff;
   --color-menu: #fff !important;
+  --color-theme: #fff !important;
   --color-primary: #0a97d4;
   --color-hover: #0a97d4b2;
 }
@@ -54,6 +56,7 @@ body {
   --color-color: var(--color-text);
   --color-brand: var(--color-primary);
   --color-menu: var(--color-menu);
+  --color-theme: var(--color-theme);
   --color-hover:var(--color-hover);
   --color-border:var(--color-border);
   --font-title:var(--font-title);
@@ -68,4 +71,14 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-regular);
+}
+
+.breadcrumb {
+  display: flex;
+  height: 3.25rem;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-radius: .75rem;
+  --tw-bg-opacity: 1;
 }
