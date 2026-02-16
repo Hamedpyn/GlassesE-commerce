@@ -15,7 +15,6 @@ export default function SideBar({ isSideBar, setIsSideBar, searchValue, setSearc
     let bodyShadow = useRef(null)
     let navigate = useRouter();
     let userMenu = useRef(null);
-    const sidebarRef = useRef(null);
 
     useEffect(() => {
         setMounted(true)

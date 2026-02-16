@@ -55,6 +55,7 @@ export default memo(function Header() {
             if (
                 expandedSearchRef.current &&
                 !expandedSearchRef.current.contains(e.target) &&
+                searchBarRef.current &&
                 !searchBarRef.current.contains(e.target)
             ) {
                 setIsValue(false);
@@ -62,22 +63,46 @@ export default memo(function Header() {
         };
 
         bodyRef.current = document.body;
-        const allElements = bodyRef.current.querySelectorAll("*");
-
+        
         if (window.innerWidth <= 1280) {
             if (isValue) {
                 bodyShadow.current.classList.add("wrapper");
                 bodyRef.current.classList.add("overflow-hidden");
                 document.body.addEventListener("click", handleBodyClick);
+                
+                // Only disable pointer events on elements outside the search components
+                const allElements = bodyRef.current.querySelectorAll("*");
                 allElements.forEach((el) => {
-                    el.style.pointerEvents = "none";
+                    // Skip elements that are part of the expanded search or search bar
+                    if (
+                        (expandedSearchRef.current && expandedSearchRef.current.contains(el)) ||
+                        (searchBarRef.current && searchBarRef.current.contains(el))
+                    ) {
+                        // Keep pointer events enabled for search components
+                        el.style.pointerEvents = "auto";
+                    } else {
+                        // Disable pointer events for everything else
+                        el.style.pointerEvents = "none";
+                    }
                 });
+                
+                // Ensure the expanded search itself is interactive
+                if (expandedSearchRef.current) {
+                    expandedSearchRef.current.style.pointerEvents = "auto";
+                }
+                if (searchBarRef.current) {
+                    searchBarRef.current.style.pointerEvents = "auto";
+                }
             } else {
                 bodyShadow.current.classList.remove("wrapper");
                 bodyRef.current.classList.remove("overflow-hidden");
+                
+                // Reset all pointer events
+                const allElements = bodyRef.current.querySelectorAll("*");
                 allElements.forEach((el) => {
                     el.style.pointerEvents = "";
                 });
+                
                 document.body.removeEventListener("click", handleBodyClick);
             }
         }
@@ -85,6 +110,14 @@ export default memo(function Header() {
         // Cleanup event listener on unmount or when `isValue` changes
         return () => {
             document.body.removeEventListener("click", handleBodyClick);
+            
+            // Clean up pointer events
+            if (bodyRef.current) {
+                const allElements = bodyRef.current.querySelectorAll("*");
+                allElements.forEach((el) => {
+                    el.style.pointerEvents = "";
+                });
+            }
         };
     }, [isValue]);
 
@@ -104,8 +137,12 @@ export default memo(function Header() {
 
             // Apply `pointer-events: none` to all elements except `userMenu`
             body.querySelectorAll("*").forEach((el) => {
-                if (userMenu.current && el !== userMenu.current && !userMenu.current.contains(el)) {
+                if (userMenu.current && 
+                    el !== userMenu.current && 
+                    !userMenu.current.contains(el)) {
                     el.style.pointerEvents = "none";
+                } else {
+                    el.style.pointerEvents = "auto";
                 }
             });
 
@@ -240,19 +277,21 @@ export default memo(function Header() {
                                 <div
                                     ref={expandedSearchRef}
                                     id="ExpandedSearch"
-                                    onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
-                                    className="xl:hidden absolute top-28 left-0 opacity-100 flex items-center bg-[#f3f4f6] dark:bg-[#2F3542] z-50 h-13 pointer-events-auto rounded-full justify-around w-57.5 flex-row-reverse px-2"
+                                    onClick={(e) => {
+                                        e.stopPropagation()
+                                    }} // Prevent closing when clicking inside
+                                    className="xl:hidden absolute top-28 left-0 opacity-100 flex items-center bg-background z-50 h-13 pointer-events-auto rounded-full justify-around w-57.5 flex-row-reverse px-2"
                                 >
                                     <IoSearchOutline
                                         onClick={navigateUser}
-                                        className="text-2xl h-full cursor-pointer pointer-events-auto dark:text-white text-gray-900" />
+                                        className="text-2xl h-full cursor-pointer pointer-events-auto text-color" />
                                     <input
                                         value={searchValue}
                                         onKeyDown={navigateUserOnKey}
                                         onChange={e => setSearchValue(e.target.value)}
                                         style={{ all: "unset" }}
                                         type="text"
-                                        className="mt-1 pointer-events-auto h-full inline-block text-sm cursor-default dark:text-white text-gray-900 text-start"
+                                        className="mt-1 pointer-events-auto h-full inline-block text-sm cursor-default text-color text-start"
                                         placeholder="چیو میخوای یاد بگیری؟"
                                     />
                                 </div>
@@ -260,27 +299,27 @@ export default memo(function Header() {
                         </div>
 
                     </div>
-                    <div className={`${isValue ? "flex h-13 items-center pointer-events-none" : "flex h-13 items-center gap-5"}`}>
+                    <div className="flex h-13 items-center gap-5">
                         <div className="lg:ml-8 h-full">
                             <Image height={60} width={66} className="rounded" src="/images/photo_2026-02-14_01-04-33.jpg" alt="logo" />
                         </div>
                         <ul className="hidden lg:flex gap-6">
                             <li className="group relative">
-                                <Link href={'/'} className="flex items-center gap-x-1 text-menu h-full group-hover:text-hover transition-colors">
+                                <Link href={'/'} className="flex items-center gap-x-1 text-menu h-full group-hover:text-brand transition-colors">
                                     صفحه اصلی
                                 </Link>
                             </li>
 
                             <li className="group relative">
-                                <Link href={'/Courses'} className="dana-regular gap-1 flex items-center text-menu h-full group-hover:text-hover  transition-colors">
-                                    دوره ها
-                                    <VscChevronDown style={{ all: "unset" }} className="text-lg dark:fill-white! fill-gray-900! group-hover:fill-hover transition-colors  " />
+                                <Link href={'/Courses'} className="dana-regular gap-1 flex items-center text-menu h-full group-hover:text-brand  transition-colors">
+                                محصولات
+                                    <VscChevronDown style={{ all: "unset" }} className="text-lg fill-color! group-hover:fill-brand! transition-colors  " />
                                 </Link>
                                 <div className="z-50 invisible opacity-0 absolute xl:pt-8  top-full pt-4 right-0 group-hover:visible group-hover:opacity-100 transition-all w-64 cursor-auto">
-                                    <ul className="bg-white dark:bg-[#242A38] rounded border-y border-[#0f6b68] p-5 flex flex-col gap-5">
+                                    <ul className="bg-foreground rounded border-y border-[#0f6b68] p-5 flex flex-col gap-5">
                                         <li className="cursor-pointer">
-                                            <span className="w-full flex dana-regular hover:text-[#159995] transition-all dark:text-white text-gray-900 text-[16px]">
-                                                دوره x									</span>
+                                            <span className="w-full flex dana-regular hover:text-brand transition-all text-color text-[16px]">
+                                                عینک x									</span>
                                         </li>
 
                                     </ul>
