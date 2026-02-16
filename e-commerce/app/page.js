@@ -3,6 +3,7 @@ import SunGlasses from "@/components/templates/Home/SunGlasses";
 import HeroSection from "@/components/templates/Home/HeroSection";
 import PrescriptionGlasses from "@/components/templates/Home/PrescriptionGlasses";
 import HelpSection from "@/components/templates/Home/HelpSection";
+import Footer from "@/components/modules/Footer/Footer";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <PrescriptionGlasses />
         <HelpSection />
       </div>
+      <Footer />
     </>
   );
 }
