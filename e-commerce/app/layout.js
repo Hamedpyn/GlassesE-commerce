@@ -35,7 +35,11 @@ export default function RootLayout({ children }) {
         className={`${thinText.variable} ${fontRegular.variable} ${fontTitle.variable} ${sectionHeading.variable} ${fontDescription.variable}`}
         cz-shortcut-listen="true"
       >
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <div className="flex flex-col items-center">
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
