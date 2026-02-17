@@ -63,13 +63,13 @@ export default memo(function Header() {
         };
 
         bodyRef.current = document.body;
-        
+
         if (window.innerWidth <= 1280) {
             if (isValue) {
                 bodyShadow.current.classList.add("wrapper");
                 bodyRef.current.classList.add("overflow-hidden");
                 document.body.addEventListener("click", handleBodyClick);
-                
+
                 // Only disable pointer events on elements outside the search components
                 const allElements = bodyRef.current.querySelectorAll("*");
                 allElements.forEach((el) => {
@@ -85,7 +85,7 @@ export default memo(function Header() {
                         el.style.pointerEvents = "none";
                     }
                 });
-                
+
                 // Ensure the expanded search itself is interactive
                 if (expandedSearchRef.current) {
                     expandedSearchRef.current.style.pointerEvents = "auto";
@@ -96,13 +96,13 @@ export default memo(function Header() {
             } else {
                 bodyShadow.current.classList.remove("wrapper");
                 bodyRef.current.classList.remove("overflow-hidden");
-                
+
                 // Reset all pointer events
                 const allElements = bodyRef.current.querySelectorAll("*");
                 allElements.forEach((el) => {
                     el.style.pointerEvents = "";
                 });
-                
+
                 document.body.removeEventListener("click", handleBodyClick);
             }
         }
@@ -110,7 +110,7 @@ export default memo(function Header() {
         // Cleanup event listener on unmount or when `isValue` changes
         return () => {
             document.body.removeEventListener("click", handleBodyClick);
-            
+
             // Clean up pointer events
             if (bodyRef.current) {
                 const allElements = bodyRef.current.querySelectorAll("*");
@@ -137,8 +137,8 @@ export default memo(function Header() {
 
             // Apply `pointer-events: none` to all elements except `userMenu`
             body.querySelectorAll("*").forEach((el) => {
-                if (userMenu.current && 
-                    el !== userMenu.current && 
+                if (userMenu.current &&
+                    el !== userMenu.current &&
                     !userMenu.current.contains(el)) {
                     el.style.pointerEvents = "none";
                 } else {
@@ -184,7 +184,7 @@ export default memo(function Header() {
                                 {<div ref={userMenu} className={`bg-white w-69.5 rounded-xl dark:bg-[#242a38] absolute top-full ${openUserMenu ? "flex z-50" : "hidden"}`}>
                                     <div className="p-4 flex flex-col w-full justify-start">
                                         <div className="flex w-full pb-3 items-center gap-5 border-b border-b-neutral-200 dark:border-b-white/10">
-                                            {/* <img className="w-14 rounded-full" src={"/images/ba986f5ecace8be41dfdf99d3000078f.png"} alt="user Image" /> */}
+                                            {/* <img className="w-14 rounded-full" src={"./images/ba986f5ecace8be41dfdf99d3000078f.png"} alt="user Image" /> */}
                                             <span className="flex text-gray-900 dark:text-white flex-col items-start dana-regular">
                                                 <span>{" نام کاربری"}</span>
 
@@ -301,7 +301,7 @@ export default memo(function Header() {
                     </div>
                     <div className="flex h-13 items-center gap-5">
                         <div className="lg:ml-8 h-full">
-                            <Image height={60} width={66} className="rounded" src="/images/photo_2026-02-14_01-04-33.jpg" alt="logo" />
+                            <Image height={60} width={66} className="rounded" src="./images/photo_2026-02-14_01-04-33.jpg" alt="logo" />
                         </div>
                         <ul className="hidden lg:flex gap-6">
                             <li className="group relative">
@@ -312,7 +312,7 @@ export default memo(function Header() {
 
                             <li className="group relative">
                                 <Link href={'/Courses'} className="dana-regular gap-1 flex items-center text-menu h-full group-hover:text-brand  transition-colors">
-                                محصولات
+                                    محصولات
                                     <VscChevronDown style={{ all: "unset" }} className="text-lg fill-color! group-hover:fill-brand! transition-colors  " />
                                 </Link>
                                 <div className="z-50 invisible opacity-0 absolute xl:pt-8  top-full pt-4 right-0 group-hover:visible group-hover:opacity-100 transition-all w-64 cursor-auto">

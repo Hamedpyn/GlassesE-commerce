@@ -13,10 +13,10 @@ export default function SunGlasses() {
                 alert={"bg-brand"}
             />
             <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-                <GlassesCard title={"عینک آفتابی SUNCRUISER"} src={"/images/test.webp"} />
-                <GlassesCard title={"عینک آفتابی SUNCRUISER"} src={"/images/test.webp"} />
-                <GlassesCard title={"عینک آفتابی SUNCRUISER"} src={"/images/test.webp"} />
-                <GlassesCard title={"عینک آفتابی SUNCRUISER"} src={"/images/test.webp"} />
+                <GlassesCard title={"عینک آفتابی SUNCRUISER"} src={"./images/test.webp"} />
+                <GlassesCard title={"عینک آفتابی SUNCRUISER"} src={"./images/test.webp"} />
+                <GlassesCard title={"عینک آفتابی SUNCRUISER"} src={"./images/test.webp"} />
+                <GlassesCard title={"عینک آفتابی SUNCRUISER"} src={"./images/test.webp"} />
             </div>
         </div>
 

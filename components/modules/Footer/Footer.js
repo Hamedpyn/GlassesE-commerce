@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="w-full gap-2 flex-wrap flex-col sm:flex-row max-w-350 p-10 flex justify-between">
         <div>
           <div className="flex flex-col items-start gap-4">
-            <Image height={100} width={100} className="rounded" src="/images/photo_2026-02-14_01-04-33.jpg" alt="logo" />
+            <Image height={100} width={100} className="rounded" src="./images/photo_2026-02-14_01-04-33.jpg" alt="logo" />
             <h4 className="text-menu">فروشگاه اینترنتی عینک رهام</h4>
           </div>
           <div className="pt-5 flex flex-col gap-2">
@@ -51,21 +51,21 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex items-start pt-5">
-          <Image height={100} width={100} className="rounded" src="/images/license1.png" alt="اینماد" />
-          <Image height={80} width={80} className="rounded" src="/images/license2.svg" alt="اینماد" />
+          <Image height={100} width={100} className="rounded" src="./images/license1.png" alt="اینماد" />
+          <Image height={80} width={80} className="rounded" src="./images/license2.svg" alt="اینماد" />
 
         </div>
       </div>
       <div className="border-t justify-center border-menu/30 py-3 w-full max-w-350 flex items-center gap-1 flex-wrap">
         <PiCopyright />
         <span className="text-center">
-        کدنویسی شده با ❤️ توسط{" "}
+          کدنویسی شده با ❤️ توسط{" "}
           <a href="https://t.me/hamedpyn" title="Front-End" target="_blank" rel="noopener noreferrer" className="underline transition-all text-brand">hamedpyn</a>{" "}
           و{" "}
           <a href="https://t.me/devue4" title="Back-End" target="_blank" rel="noopener noreferrer" className="underline transition-all text-brand">Najji</a>
         </span>
       </div>
-      
+
     </section>
   );
 };
