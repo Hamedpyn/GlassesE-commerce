@@ -3,27 +3,27 @@ import { ThemeProvider } from "@/components/modules/ThemeProvider/themeProvider"
 import localFont from "next/font/local";
 
 const thinText = localFont({
-  src: "./fonts/thinText.ttf",
+  src: "./fonts/thinText.woff2",
   display: "swap",
   variable: "--font-thin",
 });
 const fontTitle = localFont({
-  src: "./fonts/boldTitle.TTF",
+  src: "./fonts/boldTitle.woff2",
   display: "swap",
   variable: "--font-title",
 });
 const sectionHeading = localFont({
-  src: "./fonts/sectionHeading.ttf",
+  src: "./fonts/sectionHeading.woff2",
   display: "swap",
   variable: "--font-heading",
 });
 const fontDescription = localFont({
-  src: "./fonts/lightText.ttf",
+  src: "./fonts/lightText.woff2",
   display: "swap",
   variable: "--font-description",
 });
 const fontRegular = localFont({
-  src: "./fonts/regular.ttf",
+  src: "./fonts/regular.woff2",
   display: "swap",
   variable: "--font-regular",
 });
