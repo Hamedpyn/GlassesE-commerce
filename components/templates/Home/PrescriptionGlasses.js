@@ -13,10 +13,10 @@ export default function PrescriptionGlasses() {
                 alert={"bg-brand"}
             />
             <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-                <GlassesCard title={"عینک طبی برند خاص"} src={"./Images/test2.jpg"} />
-                <GlassesCard title={"عینک طبی برند خاص"} src={"./Images/test2.jpg"} />
-                <GlassesCard title={"عینک طبی برند خاص"} src={"./Images/test2.jpg"} />
-                <GlassesCard title={"عینک طبی برند خاص"} src={"./Images/test2.jpg"} />
+                <GlassesCard title={"عینک طبی برند خاص"} src={"public/Images/test2.jpg"} />
+                <GlassesCard title={"عینک طبی برند خاص"} src={"public/Images/test2.jpg"} />
+                <GlassesCard title={"عینک طبی برند خاص"} src={"public/Images/test2.jpg"} />
+                <GlassesCard title={"عینک طبی برند خاص"} src={"public/Images/test2.jpg"} />
             </div>
         </div>
 
