@@ -301,7 +301,7 @@ export default memo(function Header() {
                     </div>
                     <div className="flex h-13 items-center gap-5">
                         <div className="lg:ml-8 h-full">
-                            <Image height={60} width={66} className="rounded" src="public/Images/photo_2026-02-14_01-04-33.jpg" alt="logo" />
+                            <Image height={60} width={66} className="rounded" src="/Images/photo_2026-02-14_01-04-33.jpg" alt="logo" />
                         </div>
                         <ul className="hidden lg:flex gap-6">
                             <li className="group relative">

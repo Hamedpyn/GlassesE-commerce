@@ -102,7 +102,7 @@ export default function SideBar({ isSideBar, setIsSideBar, searchValue, setSearc
                             }
                         </button>
                     </div>
-                    <Image height={60} width={66} className="rounded" src="public/Images/photo_2026-02-14_01-04-33.jpg" alt="logo" />
+                    <Image height={60} width={66} className="rounded" src="/Images/photo_2026-02-14_01-04-33.jpg" alt="logo" />
                 </div>
                 <div className="pt-3">
                     <button className="flex bg-background h-12 rounded-full items-center justify-evenly w-56 flex-row-reverse cursor-auto">
