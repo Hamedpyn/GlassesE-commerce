@@ -8,7 +8,7 @@ const thinText = localFont({
   variable: "--font-thin",
 });
 const fontTitle = localFont({
-  src: "./fonts/boldTitle.ttf",
+  src: "./fonts/boldTitle.TTF",
   display: "swap",
   variable: "--font-title",
 });
