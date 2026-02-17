@@ -184,7 +184,7 @@ export default memo(function Header() {
                                 {<div ref={userMenu} className={`bg-white w-69.5 rounded-xl dark:bg-[#242a38] absolute top-full ${openUserMenu ? "flex z-50" : "hidden"}`}>
                                     <div className="p-4 flex flex-col w-full justify-start">
                                         <div className="flex w-full pb-3 items-center gap-5 border-b border-b-neutral-200 dark:border-b-white/10">
-                                            {/* <img className="w-14 rounded-full" src={"./images/ba986f5ecace8be41dfdf99d3000078f.png"} alt="user Image" /> */}
+                                            {/* <img className="w-14 rounded-full" src={"./Images/ba986f5ecace8be41dfdf99d3000078f.png"} alt="user Image" /> */}
                                             <span className="flex text-gray-900 dark:text-white flex-col items-start dana-regular">
                                                 <span>{" نام کاربری"}</span>
 
@@ -301,7 +301,7 @@ export default memo(function Header() {
                     </div>
                     <div className="flex h-13 items-center gap-5">
                         <div className="lg:ml-8 h-full">
-                            <Image height={60} width={66} className="rounded" src="./images/photo_2026-02-14_01-04-33.jpg" alt="logo" />
+                            <Image height={60} width={66} className="rounded" src="./Images/photo_2026-02-14_01-04-33.jpg" alt="logo" />
                         </div>
                         <ul className="hidden lg:flex gap-6">
                             <li className="group relative">

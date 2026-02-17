@@ -47,7 +47,7 @@ function HeroSection() {
                     <Image
                         className="lg:h-95 object-cover rounded-3xl"
                         // className="lg:w-145 lg:h-95 object-cover xl:w-auto rounded-3xl"
-                        src="./images/photo_2026-02-14_01-04-33.jpg"
+                        src="./Images/photo_2026-02-14_01-04-33.jpg"
                         alt="مدل عینک آفتابی شیک"
                         width={580}
                         height={380}
