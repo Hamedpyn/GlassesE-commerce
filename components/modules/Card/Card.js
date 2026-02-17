@@ -2,7 +2,7 @@ import { RiShoppingCartLine } from "react-icons/ri";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function GlassesCard({src,title}) {
+export default function GlassesCard({ src, title }) {
 
     return (
         <div className="relative flex items-center flex-col mb-10!">
@@ -16,8 +16,10 @@ export default function GlassesCard({src,title}) {
                         alt="مدل عینک شیک"
                         width={580}
                         height={380}
-                        quality={100}
+                        quality={85}
+                        sizes="(max-width: 768px) 100vw, 580px"
                     />
+
                 </div>
                 <div className="w-[80%] gap-3 h-auto pb-10 sm:pb-13">
                     <div className="pt-4 flex items-end flex-wrap justify-between">
@@ -29,12 +31,12 @@ export default function GlassesCard({src,title}) {
                         </span>
                     </div>
                     <div className="flex items-center gap-4 mt-4! justify-center">
-                    <span title="مشکی" className="w-3 h-3 rounded-full bg-black outline outline-offset-4 outline-black hover:scale-120 transition-all"></span>
-                    <span title="طلایی" className="w-3 h-3 rounded-full bg-yellow-400 outline outline-offset-4 outline-yellow-400 hover:scale-120 transition-all"></span>
-                    <span title="صورتی" className="w-3 h-3 rounded-full bg-pink-500 outline outline-offset-4 outline-pink-500 hover:scale-120 transition-all"></span>
-                    <span title="سبز" className="w-3 h-3 rounded-full bg-green-500 outline outline-offset-4 outline-green-500 hover:scale-120 transition-all"></span>
-                    <span title="نقره‌ای" className="w-3 h-3 rounded-full bg-gray-300 outline outline-offset-4 outline-gray-300 hover:scale-120 transition-all"></span>
-                </div>
+                        <span title="مشکی" className="w-3 h-3 rounded-full bg-black outline outline-offset-4 outline-black hover:scale-120 transition-all"></span>
+                        <span title="طلایی" className="w-3 h-3 rounded-full bg-yellow-400 outline outline-offset-4 outline-yellow-400 hover:scale-120 transition-all"></span>
+                        <span title="صورتی" className="w-3 h-3 rounded-full bg-pink-500 outline outline-offset-4 outline-pink-500 hover:scale-120 transition-all"></span>
+                        <span title="سبز" className="w-3 h-3 rounded-full bg-green-500 outline outline-offset-4 outline-green-500 hover:scale-120 transition-all"></span>
+                        <span title="نقره‌ای" className="w-3 h-3 rounded-full bg-gray-300 outline outline-offset-4 outline-gray-300 hover:scale-120 transition-all"></span>
+                    </div>
                 </div>
             </Link>
 

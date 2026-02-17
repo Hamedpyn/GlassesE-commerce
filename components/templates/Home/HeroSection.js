@@ -52,6 +52,7 @@ function HeroSection() {
                         width={580}
                         height={380}
                         priority
+                        sizes="(max-width: 768px) 100vw, 580px"
                         quality={85} // Adjust quality as needed (default is 75)
                     />
                 </div>
