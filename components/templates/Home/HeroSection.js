@@ -5,7 +5,7 @@ import { CiPlay1 } from "react-icons/ci";
 function HeroSection() {
     return (
         <section className="mt-10! px-2" aria-label="hero section">
-            <div className="flex flex-col-reverse gap-5 lg:flex-row items-center bg-foreground m-4 p-3 sm:p-7 sm:m-10 lg:p-14 rounded-3xl ">
+            <div className="flex justify-between flex-col-reverse gap-5 lg:flex-row items-center bg-foreground m-4 p-3 sm:p-7 sm:m-10 lg:p-14 rounded-3xl ">
                 {/* Content Section */}
                 <div className="basis-1/2 flex flex-col items-center lg:items-start gap-5">
                     <div className="flex flex-col gap-4 sm:gap-10 items-center lg:items-start">
@@ -45,7 +45,8 @@ function HeroSection() {
                 {/* Responsive Image Section */}
                 <div className="h-full">
                     <Image
-                        className="lg:w-145 lg:h-95 object-cover xl:w-auto rounded-3xl"
+                        className="lg:h-95 object-cover rounded-3xl"
+                        // className="lg:w-145 lg:h-95 object-cover xl:w-auto rounded-3xl"
                         src="/Images/photo_2026-02-14_01-04-33.jpg"
                         alt="مدل عینک آفتابی شیک"
                         width={580}
