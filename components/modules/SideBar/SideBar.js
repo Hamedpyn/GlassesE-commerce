@@ -121,19 +121,19 @@ export default function SideBar({ isSideBar, setIsSideBar, searchValue, setSearc
                     <ul className="flex flex-col gap-5 mt-5!">
                         <li className="dana-regular group text-gray-900 dark:text-white w-full">
                             <span className="text-menu flex items-center justify-between h-full group-hover:text-hover transition-colors">
-                                <Link href={'/course-cat/php'}>صفحه اصلی</Link>
+                                <Link href={'/'}>صفحه اصلی</Link>
                             </span>
                         </li>
 
                         <li className="dana-regular group text-gray-900 dark:text-white w-full">
                             <span className="flex items-center justify-between h-full group-hover:text-hover text-menu transition-colors">
-                                <Link href={'/courses'}>دوره ها</Link>
+                                <Link href={'/glasses'}>محصولات</Link>
                                 {isSubMenu ? <VscChevronDown onClick={() => setIsSubMenu(prev => !prev)} className="text-lg mb-1 cursor-pointer" /> : <VscChevronLeft onClick={() => setIsSubMenu(prev => !prev)} className="text-lg mb-1 cursor-pointer" />}
                             </span>
                             <div className={`pt-4 transition-all cursor-auto ${isSubMenu ? "opacity-100 visible" : "opacity-0 invisible hidden"}`}>
                                 <ul className="bg-background rounded-xl p-5 flex flex-col gap-5">
                                     <li className="cursor-pointer">
-                                        <span className="w-full flex dana-regular hover:text-hover transition-all text-color text-sm">دوره x</span>
+                                        <span className="w-full flex dana-regular hover:text-hover transition-all text-color text-sm">عینک x</span>
                                     </li>
                                 </ul>
                             </div>

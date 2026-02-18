@@ -317,7 +317,7 @@ export default memo(function Header() {
                             </li>
 
                             <li className="group relative">
-                                <Link href={'/Courses'} className="dana-regular gap-1 flex items-center text-menu h-full group-hover:text-brand  transition-colors">
+                                <Link href={'/glasses'} className="dana-regular gap-1 flex items-center text-menu h-full group-hover:text-brand  transition-colors">
                                     محصولات
                                     <VscChevronDown style={{ all: "unset" }} className="text-lg fill-color! group-hover:fill-brand! transition-colors  " />
                                 </Link>

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function SectionsTitle({ title, text, path, buttonText, alert, textSpan }) {
     return (
-        <div className={`breadCrumb mb-7! sm:mb-10! mt-24! px-2 sm:mt-40!  ${textSpan && "flex items-center justify-center sm:justify-between flex-wrap flex-col sm:flex-row gap-x-4 gap-y-1"} ${buttonText ?
+        <div className={`breadCrumb mb-7! sm:mb-10! mt-15! px-2 sm:mt-30!  ${textSpan && "flex items-center justify-center sm:justify-between flex-wrap flex-col sm:flex-row gap-x-4 gap-y-1"} ${buttonText ?
             "flex items-center justify-center sm:justify-between flex-wrap flex-col sm:flex-row gap-x-4 gap-y-7"
 
             : "flex justify-center [&>*:first-child]:items-center sm:[&>*:first-child]:items-start sm:[&>*:first-child]:w-full "}`}>
