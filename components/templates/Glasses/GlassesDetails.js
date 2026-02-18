@@ -7,7 +7,7 @@ export default function GlassesDetails() {
         <div className="flex w-full px-5 flex-col items-center justify-center mt-20 lg:flex-row relative bg-foreground py-20 lg:gap-20 gap-5 lg:items-start navbar-logo">
             <div className="max-w-350! relative flex w-full flex-col items-center justify-center gap-5 lg:gap-20 lg:flex-row lg:items-start">
                 <div className={`rounded-xl overflow-hidden max-w-[600px] lg:sticky top-12`}>
-                    <Image height={400} width={400} src={"/images/test.webp"} className="h-100 rounded-2xl object-cover" quality={100} alt={"عینک آفتابی/طبی از برند خاص"} />
+                    <Image height={400} width={400} src={"/Images/test.webp"} className="h-100 rounded-2xl object-cover" quality={100} alt={"عینک آفتابی/طبی از برند خاص"} />
 
                 </div>
                 <div className="flex flex-col items-start mt-10">
